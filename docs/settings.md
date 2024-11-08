@@ -29,8 +29,10 @@ For example, in case you want to run the app on port `5000`, just set the enviro
 
 ## Development
 
-* `--reload` - Enable auto-reload. Uvicorn supports two versions of auto-reloading behavior enabled by this option. There are important differences between them.
-* `--reload-dir <path>` - Specify which directories to watch for python file changes. May be used multiple times. If unused, then by default the whole current directory will be watched. If you are running programmatically use `reload_dirs=[]` and pass a list of strings.
+* `--reload` - Enable auto-reload. By default the current working directory is watched, but the behavior can be customized with `--reload-dir` option.
+* `--reload-dir <path>` - Specify which directories to watch for python file changes. May be used multiple times (for example, to watch both the current working directory, and another directory). If unused, then by default the whole current working directory will be watched. If you are running programmatically use `reload_dirs=[]` and pass a list of strings.
+
+Uvicorn supports two versions of auto-reloading behavior enabled by this option. There are important differences between them.
 
 ### Reloading without watchfiles
 
